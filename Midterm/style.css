@@ -1,0 +1,140 @@
+:root{
+    --main-radius:5px;
+    --main-padding:10px;
+    --almostcream: #E8E1DA;
+    --cream: #D9CDC5;
+    --beige: #C4ADA1;
+    --mousse: #96745D;
+}
+
+#container{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--almostcream);
+    display: grid;
+    height: 100vh;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+    "nav nav nav nav nav"
+    "main main main main main"
+    "footer footer footer footer footer"
+    ;
+
+}
+
+
+
+nav{
+    grid-area: nav;
+    background: var(--mousse);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    display: flex;
+    font-size: 30px;
+    padding: 20px;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+nav a{
+    text-decoration: none;
+    font-family: fantasy;
+    color:black;
+}
+
+main{
+    grid-area: main;
+    background: var(--beige);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+
+main img{
+    width: 200px;
+    height: 200px;
+    padding: var(--main-padding);
+    margin: var(--main-padding);
+    border-radius: 10px ;
+
+}
+
+#einsteinSection{
+    display: flex;
+    align-items: center;
+    background: var(--cream);
+    gap: 10px;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+
+
+#books{
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    height: 400px;
+    place-items: center;
+    background: var(--cream);
+    border-radius:var(--main-radius);
+    border: 2px solid var(--cream);
+    padding: var(--main-padding);
+    margin: var(--main-padding);
+    
+}
+
+.book{
+    width: 200px;
+    height: 300px ;
+    border-radius:var(--main-radius);
+    border: 2px solid var(--mousse);
+    padding: var(--main-padding);
+    margin: var(--main-padding);
+    text-align: center;
+}
+
+.book img{
+    width: 150px;
+    height: auto;
+    padding: var(--main-padding);
+    margin: var(--main-padding);
+    border-radius: 20px;
+    justify-content: space-between;
+}
+
+footer{
+    grid-area: footer;
+    background: var(--mousse);
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+    text-align: center;
+}
+
+@media (max-width:500px){
+    body{
+        font-size: 16px;
+    }
+
+    #container{
+
+        grid-template-columns: 1fr;
+        width: 95%;
+        padding: 10px;
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+     #books {
+    grid-template-columns: 1fr;
+  }
+
+  .book img{
+    max-width: 100%;
+    height: auto;
+  }
+}
