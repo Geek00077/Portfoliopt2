@@ -1,0 +1,398 @@
+    :root{
+   --mainColor: #213c51; 
+   --secondaryColor: #84bde0;
+   --tertiaryColor: #395a70;
+   --mainTextColor: #eeeeee;
+   --secondaryTextColor: #000000;
+
+   --fontSizeVariable: 25px;
+
+   --marginVariable: 10px;
+   --borderRadiusVariable: 10px;
+   --paddingVariable: 20px;
+   --heightVariable: 100vh;
+
+   background-color: var(--mainColor);
+}
+
+body{
+    margin:0;
+}
+
+header{
+    display: flex;
+    position: relative;
+}
+
+.menu{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuIcon{
+    /* Had to google how to fix this icon in place ngl */
+    position: static;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+    color: var(--mainTextColor);
+    font-size: 30px;
+}
+
+nav{
+    display: none;
+    
+}
+
+nav.active{
+    display: flex;
+    margin-right: 30px;
+    gap: 50px;
+    width: 100%;
+    
+}
+
+nav a{
+    color: var(--mainTextColor);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "intro intro intro intro"
+    "slugCatBox slugCatBox slugCatBox slugCatBox"
+    "techBox techBox techBox techBox"
+    "footer footer footer footer";
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+
+    
+}
+
+#container{
+        background-color: var(--tertiaryColor);
+        padding: var(--paddingVariable);
+        display: flex;
+        align-items: center;
+        margin-left: 550px;
+        margin-right: 550px;
+        flex-direction: column;
+        border-radius: 10px;
+}
+
+#container a {
+    color: var(--mainTextColor);
+}
+
+.introBox{
+    grid-area: intro;
+    background-color: var(--mainColor);
+    color: var(--mainTextColor);
+    
+}
+
+.mainBox{
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fontSizeVariable);
+    margin: var(--marginVariable);  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+main{
+    margin: 0 auto;
+    padding: 0 50px;
+    size: 35px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: var(--fontSizeVariable);
+}
+
+main img{
+    display: block;
+    margin: 0 auto;
+
+    width:550px;
+    height: 350px;
+}
+
+#image img{
+    border-radius: var(--borderRadiusVariable);
+    justify-content: center;
+}
+
+.slugCatBox{
+    grid-area: slugCatBox;
+    padding: var(--paddingVariable);
+    background-color: var(--secondaryColor);
+    color: var(--secondaryTextColor);
+    text-align: center;
+    font-size: var(--fontSizeVariable);
+}
+
+#slugCats{
+    display: grid;
+    padding: var(--paddingVariable);
+    padding-left: 150px;
+    padding-right: 150px;
+    align-items: start;
+    gap:30px;
+    justify-content: center;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "monkBox survBox hunterBox"
+    "gourBox artiBox spearBox"
+    "rivBox saintBox watcherBox";
+
+}
+
+#monkBox{
+    grid-area: monkBox;
+}
+
+#survivorBox{
+    grid-area: survBox;
+}
+
+#hunterBox{
+    grid-area: hunterBox;
+}
+
+#gourmandBox{
+    grid-area: gourBox;
+}
+
+#artificerBox{
+    grid-area: artiBox;
+}
+
+#spearMasterBox{
+    grid-area: spearBox;
+}
+
+#rivuletBox{
+    grid-area: rivBox;
+}
+
+#saintBox{
+    grid-area: saintBox;
+}
+
+#watcherBox{
+    grid-area: watcherBox;
+}
+
+#slugCats img{
+    width: 350px;
+    height: 350px;
+    border-radius: var(--borderRadiusVariable);
+}
+
+.startBox{
+    font-size: var(--fontSizeVariable);
+    text-align: center;
+}
+
+.glitchBox{
+    display:flex;
+    justify-content: space-between;
+    font-size: var(--fontSizeVariable);
+    gap: 20px;
+    padding: var(--paddingVariable);
+    color: var(--mainTextColor);
+}
+
+#karmaBox{
+    flex: 1;
+    background-color: var(--tertiaryColor);
+    padding: var(--paddingVariable);
+    border-radius: 15px;
+}
+
+#guardianBox{
+    flex: 1;
+    background-color: var(--tertiaryColor);
+    padding: var(--paddingVariable);
+    border-radius: 15px;
+}
+
+.techBox{
+    grid-area: techBox;
+    align-items: center;
+    padding: var(--paddingVariable);
+    background-color: var(--secondaryColor);
+    color: var(--secondaryTextColor);
+}
+
+#moveSectionBox{
+    font-size: var(--fontSizeVariable);
+    text-align: center;
+    margin: 50px ;
+}
+
+.movementBox{
+    display:flex;
+    justify-content: space-between;
+    font-size: var(--fontSizeVariable);
+    color: var(--mainTextColor);
+    gap: 20px;
+    padding: var(--paddingVariable);
+}
+
+#poleBox{
+    flex: 1;
+    background-color: var(--tertiaryColor);
+    padding: var(--paddingVariable);
+    border-radius: 15px;    
+}
+
+#slideBox{
+    flex: 1;
+    background-color: var(--tertiaryColor);
+    padding: var(--paddingVariable);
+    border-radius: 15px;
+}
+
+#rollBox{
+    flex: 1;
+    background-color: var(--tertiaryColor);
+    padding: var(--paddingVariable);
+    border-radius: 15px;
+}
+
+footer{
+    grid-area: footer;
+    padding: var(--paddingVariable);
+    background-color: var(--mainColor);
+    color: var(--mainTextColor);
+    font-size: var(--fontSizeVariable);
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.sourcesBox{
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fontSizeVariable);
+    gap: 20px;
+    padding: var(--paddingVariable);
+}
+
+.sourcesBox a{
+    color: var(--secondaryTextColor);
+    text-decoration:underline;
+}
+
+#runBox{
+    flex: 1;
+    color: var(--secondaryTextColor);
+    background-color: var(--mainTextColor);
+    padding: var(--paddingVariable);
+    border-radius: 15px;
+}
+
+#splitBox{
+    flex:1;
+    color: var(--secondaryTextColor);
+    background-color: var(--mainTextColor);
+    padding: var(--paddingVariable);
+    border-radius: 15px;
+}
+
+
+.footerBox{
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fontSizeVariable);
+    gap: 20px;
+    padding: var(--paddingVariable);
+}
+
+.footerBox a{
+    color: var(--secondaryTextColor);
+    text-decoration:underline;
+}
+
+#mapBox{
+    flex: 1;
+    color: var(--secondaryTextColor);
+    background-color: var(--mainTextColor);
+    padding: var(--paddingVariable);
+    border-radius: 15px;
+}
+
+#moveGuideBox{
+    flex: 1;
+    color: var(--secondaryTextColor);
+    background-color: var(--mainTextColor);
+    padding: var(--paddingVariable);
+    border-radius: 15px;
+}
+
+
+
+@media (max-width:500px){
+
+    :root{
+        --mobileFontSize: 16px;
+        --mobilePadding: 15px;
+
+        font-size: var(--mobileFontSize);
+        flex-wrap: wrap;
+    }
+
+    main{
+        padding-left: var(--mobilePadding);
+        padding-right: var(--mobilePadding);
+    }
+
+    .container{ 
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        width: 95%;
+        padding: 10px;
+        min-height: 100vh;
+    }
+
+    #slugCats{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 15px;
+    }
+
+    #slugCats img{
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+    }
+
+    .glitchBox{
+        flex-direction: column;
+    }
+    
+    .movementBox{
+        flex-direction: column;
+    }
+
+    .sourcesBox{
+        flex-direction: column;
+    }
+
+    .footerBox{
+        flex-direction: column;
+    }
+}
