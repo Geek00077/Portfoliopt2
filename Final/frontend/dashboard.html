@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - My Notes</title>
+</head>
+<body>
+  <style>
+    :root{
+    --mainColor: #213c51; 
+    --secondaryColor: #84bde0;
+    --tertiaryColor: #395a70;
+    --mainTextColor: #eeeeee;
+    --secondaryTextColor: #000000;
+
+    --fontSizeVariable: 25px;
+
+    --marginVariable: 10px;
+    --borderRadiusVariable: 10px;
+    --paddingVariable: 20px;
+    --heightVariable: 100vh;
+
+    background-color: var(--tertiaryColor);
+
+  }
+
+  body{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas: "nav nav nav nav"
+            "header header header header"
+            "main main main main"
+            "slugcat slugcat slugcat slugcat";
+        }
+
+        nav{
+            grid-area: nav;
+            background-color: var(--mainColor);
+            padding: 10px;
+            border-radius: var(--borderRadiusVariable);
+            
+        }
+
+        nav button{
+          border-radius: 10px;
+        }
+
+        header{
+            grid-area: header;
+            display: flex;
+            justify-content: center;
+            background-color: var(--mainColor);
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        header h1{
+            color: var(--mainTextColor);
+        }
+
+        main{
+            grid-area: main;
+            
+        }
+
+        #createSlugcat{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--mainColor);
+            padding: 10px;
+            margin: 10px;
+            width: var(--widthVariable);
+            border-radius: 10px;
+        }
+
+        #createSlugcat form{
+            display: flex;
+            flex-direction: column;
+            padding: var(--paddingVariable);
+            gap: 10px;
+            width: 500px;
+        }
+
+        #createSlugcat h2{
+          color: var(--mainTextColor);
+        }
+
+        #createSlugcat button{
+            padding: 10px;
+            margin: 10ps;
+            border-radius: 10px;
+        }
+
+        #Slugcatadjustor{
+            grid-area: slugcat;
+
+        }
+
+        #SlugcatContainer{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: var(--mainColor);
+            padding: 10px;
+            margin: 10px;
+            width: var(--widthVariable);
+            border-radius: 10px;
+
+            color: var(--mainTextColor);
+        }
+
+        #SlugcatContainer button{
+          border-radius: var(--borderRadiusVariable);
+        }
+
+
+  </style>
+
+  <nav>
+  <button id="logoutBtn">Logout</button>
+  </nav>
+
+  <header>
+  <h1>My Notes</h1>
+  </header>
+
+  <hr>
+
+  <main>
+  <!-- CREATE NOTE -->
+   <div id = "createSlugcat">
+  <h2>Create a Slugcat</h2>
+  <form id="createSlugcatForm">
+    <input type="text" id="SlugType" placeholder="Enter the Slugcat Type" required>
+    <input type="text" id = "description" placeholder="Describe your Slugcat" required>
+    <input type="text" id="imageURL" placeholder="Add an image URL for your SlugCat">
+    <input type="text" id="imageBackUp" placeholder="Add the backup text for if your URL doesn't work" required>
+    <input type="text" id="DivId" placeholder="Div name for this new Slugcat" required>
+    <button type="submit">Add Slugcat</button>
+  </form>
+  <p id="createMsg" style="color:green;"></p>
+  <hr>
+  </div>
+  </main>
+
+  <div id = "Slugcatadjustor">
+  <div id = "SlugcatContainer">
+  <!-- ALL Slugcats -->
+  <h2>All Slugcats</h2>
+  <div id="SlugcatList"></div>
+  
+  <!-- EDIT Slugcat (hidden until user clicks Edit) -->
+  <div id="editSection" style="display:none;">  
+    <hr>
+    <h2>Edit Note</h2>
+    <input type="text" id="editSlugcatText" placeholder="Updated text...">
+    <input type="hidden" id="editSlugcatId">
+    <button id="saveEditBtn">Save</button>
+    <button id="cancelEditBtn">Cancel</button>
+    <p id="editMsg" style="color:green;"></p>
+  </div>
+  </div>
+  </div>
+  <script src="js/slugcat.js"></script>
+</body>
+</html>
